@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 interface BlogPost {
   title: string;
@@ -10,16 +12,6 @@ interface BlogPost {
   authorInitial: string;
   imageUrl: string;
 }
-
-const categories = [
-  "All",
-  "Strategy",
-  "SEO",
-  "Social Media",
-  "Email Marketing",
-  "Paid Ads",
-  "Trends",
-];
 
 const posts: BlogPost[] = [
   {
@@ -90,16 +82,23 @@ const posts: BlogPost[] = [
   },
 ];
 
-const Blog = () => {
+// Extract unique categories dynamically
+const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
+
+const Blog: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredPosts =
+    selectedCategory === "All"
+      ? posts
+      : posts.filter((post) => post.category === selectedCategory);
+
   return (
-    <div>
+    <div id="blog">
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium mb-6">
-              <i className="ri-article-line mr-2"></i>Latest Insights
-            </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Digital Marketing{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-500">
@@ -117,8 +116,9 @@ const Blog = () => {
             {categories.map((cat) => (
               <button
                 key={cat}
+                onClick={() => setSelectedCategory(cat)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                  cat === "All"
+                  selectedCategory === cat
                     ? "bg-indigo-600 text-white shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600"
                 }`}
@@ -130,58 +130,64 @@ const Blog = () => {
 
           {/* Blog Posts */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, idx) => (
-              <article
-                key={idx}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    alt={post.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
-                    src={post.imageUrl}
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-semibold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center text-sm text-gray-500 space-x-4">
-                    <span className="flex items-center">
-                      <i className="ri-calendar-line mr-1"></i>
-                      {post.date}
-                    </span>
-                    <span className="flex items-center">
-                      <i className="ri-time-line mr-1"></i>
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 leading-tight hover:text-indigo-600 transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {post.description}
-                  </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white text-sm font-semibold">
-                          {post.authorInitial}
-                        </span>
-                      </div>
-                      <span className="text-sm text-gray-600">
-                        {post.author}
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map((post, idx) => (
+                <article
+                  key={idx}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      alt={post.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+                      src={post.imageUrl}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-semibold">
+                        {post.category}
                       </span>
                     </div>
-                    <button className="text-indigo-600 hover:text-indigo-700 font-medium text-sm transition-colors duration-300 cursor-pointer">
-                      Read More →
-                    </button>
                   </div>
-                </div>
-              </article>
-            ))}
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center text-sm text-gray-500 space-x-4">
+                      <span className="flex items-center">
+                        <i className="ri-calendar-line mr-1"></i>
+                        {post.date}
+                      </span>
+                      <span className="flex items-center">
+                        <i className="ri-time-line mr-1"></i>
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 leading-tight hover:text-indigo-600 transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {post.description}
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-3">
+                          <span className="text-white text-sm font-semibold">
+                            {post.authorInitial}
+                          </span>
+                        </div>
+                        <span className="text-sm text-gray-600">
+                          {post.author}
+                        </span>
+                      </div>
+                      <button className="text-indigo-600 hover:text-indigo-700 font-medium text-sm transition-colors duration-300 cursor-pointer">
+                        Read More →
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <p className="col-span-full text-center text-gray-500">
+                No posts found for "{selectedCategory}"
+              </p>
+            )}
           </div>
 
           {/* Newsletter */}
@@ -209,13 +215,6 @@ const Blog = () => {
                 anytime.
               </p>
             </div>
-          </div>
-
-          {/* View All Posts */}
-          <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
-              View All Blog Posts
-            </button>
           </div>
         </div>
       </section>

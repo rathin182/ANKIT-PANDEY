@@ -4,7 +4,8 @@ import React from "react";
 const features = [
   {
     title: "Fast Results",
-    description: "See measurable improvements in your digital presence within 30 days",
+    description:
+      "See measurable improvements in your digital presence within 30 days",
     icon: "ri-rocket-line",
     bgGradient: "from-cyan-400 to-blue-400",
   },
@@ -16,7 +17,8 @@ const features = [
   },
   {
     title: "Proven Methods",
-    description: "Learn strategies that have generated millions in revenue for clients",
+    description:
+      "Learn strategies that have generated millions in revenue for clients",
     icon: "ri-trophy-line",
     bgGradient: "from-green-400 to-emerald-400",
   },
@@ -48,8 +50,9 @@ const DigitalGrowth: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-            Join thousands of successful entrepreneurs and marketers who've transformed
-            their businesses with proven digital marketing strategies.
+            Join thousands of successful entrepreneurs and marketers who've
+            transformed their businesses with proven digital marketing
+            strategies.
           </p>
 
           {/* Features */}
@@ -64,7 +67,9 @@ const DigitalGrowth: React.FC = () => {
                 >
                   <i className={`${feature.icon} text-white text-2xl`}></i>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-blue-200 text-sm">{feature.description}</p>
               </div>
             ))}
@@ -72,22 +77,38 @@ const DigitalGrowth: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl whitespace-nowrap cursor-pointer">
+            <button
+              onClick={() => {
+                const section = document.getElementById("contact");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl whitespace-nowrap cursor-pointer"
+            >
               Book Free Strategy Call
             </button>
-            <button className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-blue-900 px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-xl whitespace-nowrap cursor-pointer">
+            <button
+              onClick={() => {
+                const section = document.getElementById("training");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-blue-900 px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-xl whitespace-nowrap cursor-pointer"
+            >
               Explore Training Programs
             </button>
           </div>
 
           {/* Stats */}
           <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="text-blue-200 mb-6">Trusted by industry leaders and growing businesses worldwide</p>
+            <p className="text-blue-200 mb-6">
+              Trusted by industry leaders and growing businesses worldwide
+            </p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
               {stats.map((stat, idx) => (
                 <React.Fragment key={idx}>
                   <div className="text-white font-semibold">{stat.label}</div>
-                  {idx < stats.length - 1 && <div className="w-1 h-1 bg-white rounded-full"></div>}
+                  {idx < stats.length - 1 && (
+                    <div className="w-1 h-1 bg-white rounded-full"></div>
+                  )}
                 </React.Fragment>
               ))}
             </div>

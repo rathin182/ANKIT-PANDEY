@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Homecomponent = () => {
   return (
-    <div>
+    <div id="home">
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         {/* Navbar */}
         {/* <nav className="relative z-20 w-full">
@@ -47,7 +47,7 @@ const Homecomponent = () => {
       </nav> */}
 
         <Navbar />
-        
+
         {/* Background shapes */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -94,13 +94,25 @@ const Homecomponent = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl whitespace-nowrap overflow-hidden">
+                <button
+                  onClick={() => {
+                    const section = document.getElementById("contact");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl whitespace-nowrap overflow-hidden"
+                >
                   <span className="relative z-10">
                     Get Free Strategy Session
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
-                <button className="group border-2 border-slate-400 text-slate-300 hover:bg-white hover:text-slate-900 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 whitespace-nowrap">
+                <button 
+                 onClick={() => {
+                    const section = document.getElementById("success");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+
+                className="group border-2 border-slate-400 text-slate-300 hover:bg-white hover:text-slate-900 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 whitespace-nowrap">
                   <span className="flex items-center gap-3">
                     Watch Success Stories
                     <i className="ri-play-circle-line text-2xl group-hover:scale-110 transition-transform duration-300"></i>

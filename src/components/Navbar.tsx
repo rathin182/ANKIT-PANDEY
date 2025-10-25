@@ -3,7 +3,16 @@
 import React from "react";
 
 const Navbar: React.FC = () => {
-const navLinks = ["Home", "About", "Services", "Traning" ,"Portfolio", "Success Stories", "Blog",  "Contact"];
+  const navLinks = [
+    "Home",
+    "About",
+    "Services",
+    "Traning",
+    "Portfolio",
+    "Success Stories",
+    "Blog",
+    "Contact",
+  ];
 
   return (
     <div>
@@ -20,21 +29,32 @@ const navLinks = ["Home", "About", "Services", "Traning" ,"Portfolio", "Success 
             </div>
             <div className="hidden lg:block">
               <div className="flex items-center space-x-8">
-                {["Home", "About", "Services", "Training", "Portfolio", "Blog", "Contact"].map(
-                  (item) => (
-                    <a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer"
-                    >
-                      {item}
-                    </a>
-                  )
-                )}
+                {[
+                  "Home",
+                  "About",
+                  "Services",
+                  "Training",
+                  "Portfolio",
+                  "Blog",
+                  "Contact",
+                ].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer"
+                  >
+                    {item}
+                  </a>
+                ))}
               </div>
             </div>
             <div className="hidden lg:block">
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
+              <button
+               onClick={() => {
+    const section = document.getElementById("contact");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }}
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
                 Book Free Session
               </button>
             </div>

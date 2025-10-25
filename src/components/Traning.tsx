@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 interface Course {
   title: string;
@@ -70,125 +70,138 @@ const courses: Course[] = [
 
 const Traning = () => {
   return (
-    <div>
-<section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6">
+    <div id="training">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            {/* <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6">
             <i className="ri-book-open-line mr-2"></i>
             Training Programs
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Master Digital Marketing with{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-              Expert-Led Courses
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose from our comprehensive range of courses designed to take you
-            from beginner to expert in digital marketing.
-          </p>
-        </div>
-
-        {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <div
-              key={course.title}
-              className={`relative bg-white rounded-2xl overflow-hidden shadow-lg border transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl ${
-                course.popular
-                  ? "border-orange-500 ring-2 ring-orange-200"
-                  : "border-gray-200"
-              }`}
-            >
-              {course.popular && (
-                <div className="absolute top-4 right-4 z-10">
-                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    Most Popular
-                  </div>
-                </div>
-              )}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  alt={course.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
-                  src={course.imageUrl}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
-                    {course.level}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 space-y-4">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-xl font-bold text-gray-900 leading-tight">
-                    {course.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {course.description}
-                </p>
-                <ul className="space-y-2">
-                  {course.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center text-sm text-gray-600"
-                    >
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                  <div>
-                    <div className="text-2xl font-bold text-gray-900">
-                      {course.price}
-                    </div>
-                    <div className="text-sm text-gray-500">{course.duration}</div>
-                  </div>
-                  <button
-                    className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                      course.popular
-                        ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                        : "bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600"
-                    }`}
-                  >
-                    Learn More
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Call-to-action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-3xl p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Not Sure Which Course is Right for You?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Book a free consultation call and I'll help you choose the perfect
-              learning path based on your goals and experience level.
+          </div> */}
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Master Digital Marketing with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+                Expert-Led Courses
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Choose from our comprehensive range of courses designed to take
+              you from beginner to expert in digital marketing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
-                Free Course Consultation
-              </button>
-              <button className="border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
-                View All Courses
-              </button>
+          </div>
+
+          {/* Courses Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courses.map((course) => (
+              <div
+                key={course.title}
+                className={`relative bg-white rounded-2xl overflow-hidden shadow-lg border transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl ${
+                  course.popular
+                    ? "border-orange-500 ring-2 ring-orange-200"
+                    : "border-gray-200"
+                }`}
+              >
+                {course.popular && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    alt={course.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+                    src={course.imageUrl}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">
+                      {course.level}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                      {course.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {course.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {course.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                    <div>
+                      <div className="text-2xl font-bold text-gray-900">
+                        {course.price}
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        {course.duration}
+                      </div>
+                    </div>
+                    <button
+                      className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 whitespace-nowrap cursor-pointer ${
+                        course.popular
+                          ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+                          : "bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-600"
+                      }`}
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call-to-action */}
+          <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-3xl p-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Not Sure Which Course is Right for You?
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Book a free consultation call and I'll help you choose the
+                perfect learning path based on your goals and experience level.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => {
+                    const section = document.getElementById("contact");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+                >
+                  Free Course Consultation
+                </button>
+                <button
+                  onClick={() => {
+                    const section = document.getElementById("training");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 whitespace-nowrap cursor-pointer"
+                >
+                  View All Courses
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-      
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default Traning
+export default Traning;
