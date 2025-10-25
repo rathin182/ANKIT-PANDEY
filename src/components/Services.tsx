@@ -101,36 +101,42 @@ const Services = () => {
         </div>
 
         {/* Call-to-action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to Transform Your Digital Presence?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss your specific needs and create a customized strategy that drives real results for your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-              onClick={() => {
+     <div className="text-center mt-16">
+    {/* Reduced padding on mobile (p-8) compared to large screens (p-12) */}
+    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-8 sm:p-12">
+        {/* Reduced text size on mobile (text-2xl) compared to default (text-3xl) */}
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Transform Your Digital Presence?
+        </h3>
+        {/* Reduced text size on mobile (text-base) compared to default (text-lg) */}
+        <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Let's discuss your specific needs and create a customized strategy that drives real results for your business.
+        </p>
+        {/* Stacks vertically by default, then goes horizontal on sm:flex-row */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+                onClick={() => {
                     const section = document.getElementById("contact");
                     section?.scrollIntoView({ behavior: "smooth" });
-                  }}
-
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
+                }}
+                // Reduced text size on mobile (text-base) compared to default (text-lg)
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+            >
                 Get Free Consultation
-              </button>
-              <button 
-              onClick={() => {
+            </button>
+            <button
+                onClick={() => {
                     const section = document.getElementById("portfolio");
                     section?.scrollIntoView({ behavior: "smooth" });
-                  }}
-
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                }}
+                // Reduced text size on mobile (text-base) compared to default (text-lg)
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 whitespace-nowrap cursor-pointer"
+            >
                 View Portfolio
-              </button>
-            </div>
-          </div>
+            </button>
         </div>
+    </div>
+</div>
       </div>
     </section>
 

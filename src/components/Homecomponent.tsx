@@ -5,48 +5,7 @@ const Homecomponent = () => {
   return (
     <div id="home">
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-        {/* Navbar */}
-        {/* <nav className="relative z-20 w-full">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex-shrink-0">
-              <h1
-                className="text-2xl font-bold text-white tracking-tight"
-                style={{ fontFamily: "Poppins, sans-serif" }}
-              >
-                ANKIT PANDEY
-              </h1>
-            </div>
-            <div className="hidden lg:block">
-              <div className="flex items-center space-x-8">
-                {["Home", "About", "Services", "Training", "Portfolio", "Blog", "Contact"].map(
-                  (item) => (
-                    <a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer"
-                    >
-                      {item}
-                    </a>
-                  )
-                )}
-              </div>
-            </div>
-            <div className="hidden lg:block">
-              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
-                Book Free Session
-              </button>
-            </div>
-            <div className="lg:hidden">
-              <button className="text-slate-300 hover:text-white p-2 cursor-pointer">
-                <i className="ri-menu-line text-2xl"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav> */}
-
-        <Navbar />
+       <Navbar />
 
         {/* Background shapes */}
         <div className="absolute inset-0">
@@ -70,11 +29,7 @@ const Homecomponent = () => {
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center space-y-12">
               <div className="space-y-8">
-                <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-                  <span className="text-cyan-400 font-semibold text-sm">
-                    🚀 #1 Digital Marketing Expert
-                  </span>
-                </div>
+                
                 <h1 className="text-6xl lg:text-8xl font-black leading-tight text-white">
                   Transform Your
                   <br />
@@ -121,49 +76,50 @@ const Homecomponent = () => {
               </div>
 
               {/* Stats */}
-              <div className="mt-16">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                  {[
-                    {
-                      value: "10K+",
-                      label: "Students Trained",
-                      color: "from-cyan-400 to-blue-400",
-                    },
-                    {
-                      value: "$50M+",
-                      label: "Revenue Generated",
-                      color: "from-orange-400 to-red-400",
-                    },
-                    {
-                      value: "200+",
-                      label: "Brands Grown",
-                      color: "from-green-400 to-emerald-400",
-                    },
-                    {
-                      value: "98%",
-                      label: "Success Rate",
-                      color: "from-purple-400 to-pink-400",
-                    },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                    >
-                      <div
-                        className={`text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2`}
-                      >
-                        {stat.value}
-                      </div>
-                      <div className="text-slate-400 font-medium">
-                        {stat.label}
-                      </div>
-                      <div
-                        className={`w-12 h-1 bg-gradient-to-r ${stat.color} mx-auto mt-3 rounded-full`}
-                      />
-                    </div>
-                  ))}
+           <div className="mt-16">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        {[
+            {
+                value: "10K+",
+                label: "Students Trained",
+                color: "from-cyan-400 to-blue-400",
+            },
+            {
+                value: "$50M+",
+                label: "Revenue Generated",
+                color: "from-orange-400 to-red-400",
+            },
+            {
+                value: "200+",
+                label: "Brands Grown",
+                color: "from-green-400 to-emerald-400",
+            },
+            {
+                value: "98%",
+                label: "Success Rate",
+                color: "from-purple-400 to-pink-400",
+            },
+        ].map((stat) => (
+            <div
+                key={stat.label}
+                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-4 text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            >
+                 <div
+                    className={`text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2`}
+                >
+                    {stat.value}
                 </div>
-              </div>
+                {/* Changed font size for label to text-sm on smaller screens */}
+                <div className="text-slate-400 font-medium text-sm md:text-base">
+                    {stat.label}
+                </div>
+                <div
+                    className={`w-12 h-1 bg-gradient-to-r ${stat.color} mx-auto mt-3 rounded-full`}
+                />
+            </div>
+        ))}
+    </div>
+</div>
 
               {/* Badges */}
               <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60">
