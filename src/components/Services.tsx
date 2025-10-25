@@ -1,0 +1,129 @@
+import React from 'react'
+
+const Services = () => {
+   const services = [
+    {
+      icon: "ri-lightbulb-line",
+      title: "Digital Marketing Strategy",
+      description: "Comprehensive digital marketing strategies tailored to your business goals and target audience.",
+      points: ["Market Analysis", "Competitor Research", "Growth Planning", "ROI Optimization"],
+      gradient: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: "ri-share-line",
+      title: "Social Media Growth",
+      description: "Build and engage your audience across all major social media platforms with proven tactics.",
+      points: ["Content Strategy", "Community Management", "Influencer Outreach", "Analytics & Reporting"],
+      gradient: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: "ri-search-line",
+      title: "SEO Optimization",
+      description: "Improve your search engine rankings and drive organic traffic to your website.",
+      points: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"],
+      gradient: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: "ri-advertisement-line",
+      title: "Paid Ad Campaigns",
+      description: "Maximize your advertising ROI with expertly managed Google Ads and social media campaigns.",
+      points: ["Campaign Setup", "Ad Creation", "Bid Management", "Performance Tracking"],
+      gradient: "from-orange-500 to-red-500",
+    },
+    {
+      icon: "ri-user-line",
+      title: "1-on-1 Training",
+      description: "Personalized coaching sessions designed to accelerate your digital marketing skills.",
+      points: ["Custom Curriculum", "Hands-on Practice", "Real-time Feedback", "Ongoing Support"],
+      gradient: "from-indigo-500 to-purple-500",
+    },
+    {
+      icon: "ri-team-line",
+      title: "Group Trainings",
+      description: "Interactive group sessions perfect for teams and organizations looking to upskill.",
+      points: ["Team Workshops", "Interactive Sessions", "Group Projects", "Certification"],
+      gradient: "from-teal-500 to-cyan-500",
+    },
+  ];
+
+  return (
+    <div>
+ <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+            <i className="ri-service-line mr-2"></i>
+            Services & Expertise
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Comprehensive Digital Marketing{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+              Solutions
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From strategy development to execution, I provide end-to-end digital marketing services that drive measurable results for your business.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <i className={`text-white text-2xl ${service.icon}`}></i>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.points.map((point) => (
+                    <li key={point} className="flex items-center text-sm text-gray-600">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <button className="w-full mt-6 bg-gray-50 hover:bg-blue-50 text-gray-700 hover:text-blue-600 py-3 rounded-lg font-medium transition-all duration-300 border border-gray-200 hover:border-blue-200 whitespace-nowrap cursor-pointer">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Call-to-action */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Ready to Transform Your Digital Presence?
+            </h3>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Let's discuss your specific needs and create a customized strategy that drives real results for your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer">
+                Get Free Consultation
+              </button>
+              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 whitespace-nowrap cursor-pointer">
+                View Portfolio
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  )
+}
+
+export default Services
