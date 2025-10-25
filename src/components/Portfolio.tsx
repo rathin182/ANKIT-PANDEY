@@ -97,8 +97,13 @@ const Portfolio: React.FC = () => {
         );
 
   return (
-    <div id="portfolio">
-      <section className="py-20 bg-gray-50">
+    <div id="portfolio" className="bg-gray-50">
+        <div className="m-8 flex justify-center items-center">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        Portfolio
+        </h1>
+      </div>
+      <section className=" bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">

@@ -3,11 +3,12 @@ import React from "react";
 const About = () => {
   return (
     <div id="about" className="bg-gray-50">
-      <div className="m-8 flex justify-center items-center">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-          About Ankit Pandey
-        </h1>
-      </div>
+    <div className="m-4 sm:m-6 md:m-8 flex justify-center items-center text-center">
+  <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-snug">
+    About Ankit Pandey
+  </h1>
+</div>
+
       <section className=" ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

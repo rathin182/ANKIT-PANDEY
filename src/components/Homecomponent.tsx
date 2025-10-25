@@ -4,8 +4,8 @@ import Navbar from "./Navbar";
 const Homecomponent = () => {
   return (
     <div id="home">
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-       <Navbar />
+      <section className="relative min-h-screen pb-10 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+        <Navbar />
 
         {/* Background shapes */}
         <div className="absolute inset-0">
@@ -29,7 +29,6 @@ const Homecomponent = () => {
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center space-y-12">
               <div className="space-y-8">
-                
                 <h1 className="text-6xl lg:text-8xl font-black leading-tight text-white">
                   Transform Your
                   <br />
@@ -61,13 +60,13 @@ const Homecomponent = () => {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
-                <button 
-                 onClick={() => {
+                <button
+                  onClick={() => {
                     const section = document.getElementById("success");
                     section?.scrollIntoView({ behavior: "smooth" });
                   }}
-
-                className="group border-2 border-slate-400 text-slate-300 hover:bg-white hover:text-slate-900 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 whitespace-nowrap">
+                  className="group border-2 border-slate-400 text-slate-300 hover:bg-white hover:text-slate-900 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 whitespace-nowrap"
+                >
                   <span className="flex items-center gap-3">
                     Watch Success Stories
                     <i className="ri-play-circle-line text-2xl group-hover:scale-110 transition-transform duration-300"></i>
@@ -76,89 +75,51 @@ const Homecomponent = () => {
               </div>
 
               {/* Stats */}
-           <div className="mt-16">
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-        {[
-            {
-                value: "10K+",
-                label: "Students Trained",
-                color: "from-cyan-400 to-blue-400",
-            },
-            {
-                value: "$50M+",
-                label: "Revenue Generated",
-                color: "from-orange-400 to-red-400",
-            },
-            {
-                value: "200+",
-                label: "Brands Grown",
-                color: "from-green-400 to-emerald-400",
-            },
-            {
-                value: "98%",
-                label: "Success Rate",
-                color: "from-purple-400 to-pink-400",
-            },
-        ].map((stat) => (
-            <div
-                key={stat.label}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-4 text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
-            >
-                 <div
-                    className={`text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2`}
-                >
-                    {stat.value}
-                </div>
-                {/* Changed font size for label to text-sm on smaller screens */}
-                <div className="text-slate-400 font-medium text-sm md:text-base">
-                    {stat.label}
-                </div>
-                <div
-                    className={`w-12 h-1 bg-gradient-to-r ${stat.color} mx-auto mt-3 rounded-full`}
-                />
-            </div>
-        ))}
-    </div>
-</div>
-
-              {/* Badges */}
-              <div className="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-60">
-                {[
-                  {
-                    icon: "ri-shield-check-line",
-                    color: "text-cyan-400",
-                    label: "Certified Expert",
-                  },
-                  {
-                    icon: "ri-award-line",
-                    color: "text-orange-400",
-                    label: "Industry Leader",
-                  },
-                  {
-                    icon: "ri-star-line",
-                    color: "text-yellow-400",
-                    label: "5-Star Rated",
-                  },
-                ].map((badge, i) => (
-                  <React.Fragment key={badge.label}>
-                    <div className="flex items-center gap-2 text-slate-400">
-                      <i className={`${badge.icon} ${badge.color}`}></i>
-                      <span className="text-sm font-medium">{badge.label}</span>
+              <div className="mt-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                  {[
+                    {
+                      value: "10K+",
+                      label: "Students Trained",
+                      color: "from-cyan-400 to-blue-400",
+                    },
+                    {
+                      value: "$50M+",
+                      label: "Revenue Generated",
+                      color: "from-orange-400 to-red-400",
+                    },
+                    {
+                      value: "200+",
+                      label: "Brands Grown",
+                      color: "from-green-400 to-emerald-400",
+                    },
+                    {
+                      value: "98%",
+                      label: "Success Rate",
+                      color: "from-purple-400 to-pink-400",
+                    },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-4 text-center hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                    >
+                      <div
+                        className={`text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${stat.color} mb-2`}
+                      >
+                        {stat.value}
+                      </div>
+                      {/* Changed font size for label to text-sm on smaller screens */}
+                      <div className="text-slate-400 font-medium text-sm md:text-base">
+                        {stat.label}
+                      </div>
+                      <div
+                        className={`w-12 h-1 bg-gradient-to-r ${stat.color} mx-auto mt-3 rounded-full`}
+                      />
                     </div>
-                    {i < 2 && (
-                      <div className="w-1 h-1 bg-slate-400 rounded-full" />
-                    )}
-                  </React.Fragment>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>

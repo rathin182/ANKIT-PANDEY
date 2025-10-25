@@ -94,8 +94,13 @@ const Blog: React.FC = () => {
       : posts.filter((post) => post.category === selectedCategory);
 
   return (
-    <div id="blog">
-      <section className="py-20 bg-white">
+    <div id="blog" className="bg-white">
+        <div className="m-8 flex justify-center items-center">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Ours Blogs
+        </h1>
+      </div>
+      <section className=" bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">

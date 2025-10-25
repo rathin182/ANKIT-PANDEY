@@ -70,15 +70,17 @@ const courses: Course[] = [
 
 const Traning = () => {
   return (
-    <div id="training">
-      <section className="py-20 bg-gray-50">
+    <div id="training" className="bg-gray-50 ">
+      <div className="m-8 flex justify-center items-center">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Training Programs
+        </h1>
+      </div>
+
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            {/* <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6">
-            <i className="ri-book-open-line mr-2"></i>
-            Training Programs
-          </div> */}
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Master Digital Marketing with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
@@ -167,43 +169,43 @@ const Traning = () => {
           </div>
 
           {/* Call-to-action */}
-         <div className="text-center mt-16">
-    {/* Reduced padding on mobile (p-8) compared to large screens (p-12) */}
-    <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-3xl p-8 sm:p-12">
-        {/* Reduced heading size on mobile (text-2xl) */}
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Not Sure Which Course is Right for You?
-        </h3>
-        {/* Reduced paragraph size on mobile (text-base) */}
-        <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Book a free consultation call and I'll help you choose the
-            perfect learning path based on your goals and experience level.
-        </p>
-        {/* Stacks vertically by default, goes horizontal on sm:flex-row */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-                onClick={() => {
+          <div className="text-center mt-16">
+            {/* Reduced padding on mobile (p-8) compared to large screens (p-12) */}
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-3xl p-8 sm:p-12">
+              {/* Reduced heading size on mobile (text-2xl) */}
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Not Sure Which Course is Right for You?
+              </h3>
+              {/* Reduced paragraph size on mobile (text-base) */}
+              <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Book a free consultation call and I'll help you choose the
+                perfect learning path based on your goals and experience level.
+              </p>
+              {/* Stacks vertically by default, goes horizontal on sm:flex-row */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => {
                     const section = document.getElementById("contact");
                     section?.scrollIntoView({ behavior: "smooth" });
-                }}
-                // Reduced text and padding on mobile (text-base, px-6, py-3)
-                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
-            >
-                Free Course Consultation
-            </button>
-            <button
-                onClick={() => {
+                  }}
+                  // Reduced text and padding on mobile (text-base, px-6, py-3)
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+                >
+                  Free Course Consultation
+                </button>
+                <button
+                  onClick={() => {
                     const section = document.getElementById("training");
                     section?.scrollIntoView({ behavior: "smooth" });
-                }}
-                // Reduced text and padding on mobile (text-base, px-6, py-3)
-                className="border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 whitespace-nowrap cursor-pointer"
-            >
-                View All Courses
-            </button>
-        </div>
-    </div>
-</div>
+                  }}
+                  // Reduced text and padding on mobile (text-base, px-6, py-3)
+                  className="border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 whitespace-nowrap cursor-pointer"
+                >
+                  View All Courses
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

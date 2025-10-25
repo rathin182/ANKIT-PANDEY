@@ -1,39 +1,57 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState('');
+  const [email, setEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState("");
 
   const handleNavClick = (item: string) => {
-    const section = document.getElementById(item.toLowerCase().replace(/\s+/g, '-'));
+    const section = document.getElementById(
+      item.toLowerCase().replace(/\s+/g, "-")
+    );
     if (section) {
       const navHeight = 80;
       const targetPosition = section.offsetTop - navHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && email.includes('@')) {
-      setSubscribeStatus('success');
-      setEmail('');
-      setTimeout(() => setSubscribeStatus(''), 3000);
+    if (email && email.includes("@")) {
+      setSubscribeStatus("success");
+      setEmail("");
+      setTimeout(() => setSubscribeStatus(""), 3000);
     } else {
-      setSubscribeStatus('error');
-      setTimeout(() => setSubscribeStatus(''), 3000);
+      setSubscribeStatus("error");
+      setTimeout(() => setSubscribeStatus(""), 3000);
     }
   };
 
   const socialLinks = [
-    { icon: "ri-linkedin-fill", url: "https://linkedin.com/in/ankitpandey", color: "bg-blue-600 hover:bg-blue-700" },
-    { icon: "ri-instagram-fill", url: "https://instagram.com/ankitpandey", color: "bg-pink-600 hover:bg-pink-700" },
-    { icon: "ri-youtube-fill", url: "https://youtube.com/@ankitpandey", color: "bg-red-600 hover:bg-red-700" },
-    { icon: "ri-twitter-fill", url: "https://twitter.com/ankitpandey", color: "bg-blue-400 hover:bg-blue-500" },
+    {
+      icon: "ri-linkedin-fill",
+      url: "https://linkedin.com/in/ankitpandey",
+      color: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      icon: "ri-instagram-fill",
+      url: "https://instagram.com/ankitpandey",
+      color: "bg-pink-600 hover:bg-pink-700",
+    },
+    {
+      icon: "ri-youtube-fill",
+      url: "https://youtube.com/@ankitpandey",
+      color: "bg-red-600 hover:bg-red-700",
+    },
+    {
+      icon: "ri-twitter-fill",
+      url: "https://twitter.com/ankitpandey",
+      color: "bg-blue-400 hover:bg-blue-500",
+    },
   ];
 
   const services = [
@@ -83,11 +101,16 @@ const Footer = () => {
           {/* About & Social */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: "Pacifico, serif" }}>
+              <h3
+                className="text-2xl font-bold mb-4"
+                style={{ fontFamily: "Pacifico, serif" }}
+              >
                 Ankit Pandey
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-md">
-                Empowering businesses and students through digital marketing mastery. Join 10,000+ successful marketers who've transformed their careers and businesses.
+                Empowering businesses and students through digital marketing
+                mastery. Join 10,000+ successful marketers who've transformed
+                their careers and businesses.
               </p>
             </div>
 
@@ -101,7 +124,9 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 cursor-pointer`}
-                    aria-label={social.icon.replace('ri-', '').replace('-fill', '')}
+                    aria-label={social.icon
+                      .replace("ri-", "")
+                      .replace("-fill", "")}
                   >
                     <i className={social.icon}></i>
                   </a>
@@ -111,7 +136,10 @@ const Footer = () => {
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col sm:flex-row gap-3"
+              >
                 <input
                   type="email"
                   value={email}
@@ -127,11 +155,15 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-              {subscribeStatus === 'success' && (
-                <p className="text-green-400 text-sm mt-2">Successfully subscribed!</p>
+              {subscribeStatus === "success" && (
+                <p className="text-green-400 text-sm mt-2">
+                  Successfully subscribed!
+                </p>
               )}
-              {subscribeStatus === 'error' && (
-                <p className="text-red-400 text-sm mt-2">Please enter a valid email.</p>
+              {subscribeStatus === "error" && (
+                <p className="text-red-400 text-sm mt-2">
+                  Please enter a valid email.
+                </p>
               )}
             </div>
           </div>
@@ -143,7 +175,7 @@ const Footer = () => {
               {services.map((item, idx) => (
                 <li key={idx}>
                   <button
-                    onClick={() => handleNavClick('services')}
+                    onClick={() => handleNavClick("services")}
                     className="text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer text-left"
                   >
                     {item}
@@ -160,7 +192,7 @@ const Footer = () => {
               {trainingPrograms.map((item, idx) => (
                 <li key={idx}>
                   <button
-                    onClick={() => handleNavClick('training')}
+                    onClick={() => handleNavClick("training")}
                     className="text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer text-left"
                   >
                     {item}
@@ -177,7 +209,9 @@ const Footer = () => {
               {resources.map((item, idx) => (
                 <li key={idx}>
                   <button
-                    onClick={() => handleNavClick(item.toLowerCase().replace(/\s+/g, '-'))}
+                    onClick={() =>
+                      handleNavClick(item.toLowerCase().replace(/\s+/g, "-"))
+                    }
                     className="text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer text-left"
                   >
                     {item}
@@ -189,16 +223,28 @@ const Footer = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 pt-12 border-t border-gray-800">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="transform hover:scale-105 transition-transform duration-300">
-                <div className={`text-3xl font-bold ${stat.color} mb-2`}>{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
+        <section className="bg-gray-900 ">
+          <div className="max-w-7xl mx-auto lg:px-8">
+            <div className="pt-12 border-t border-gray-800">
+           
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                {stats.map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="transform hover:scale-105 transition-transform duration-300 p-4 rounded-xl"
+                  >
+                    <div className={`text-3xl font-bold ${stat.color} mb-2`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-gray-400 text-sm sm:text-base">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
+        </section>
       </div>
 
       {/* Bottom Footer */}
@@ -206,7 +252,8 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2025 Ankit Pandey - Digital Marketer & Trainer. All rights reserved.
+              © 2025 Ankit Pandey - Digital Marketer & Trainer. All rights
+              reserved.
             </div>
             <div className="flex items-center space-x-6">
               {footerLinks.map((link, idx) => (
@@ -223,7 +270,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

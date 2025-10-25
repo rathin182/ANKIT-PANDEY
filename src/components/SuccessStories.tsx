@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface Testimonial {
   id: number;
@@ -96,7 +96,7 @@ const SuccessStories = () => {
   };
 
   return (
-    <section id='success' className="py-20 bg-white">
+    <section id="success" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -110,8 +110,8 @@ const SuccessStories = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real results from real people who've transformed their businesses and
-            careers through digital marketing mastery.
+            Real results from real people who've transformed their businesses
+            and careers through digital marketing mastery.
           </p>
         </div>
 
@@ -134,7 +134,10 @@ const SuccessStories = () => {
                         >
                           <div className="flex items-center mb-4">
                             {Array.from({ length: t.stars }).map((_, i) => (
-                              <i key={i} className="ri-star-fill text-yellow-400"></i>
+                              <i
+                                key={i}
+                                className="ri-star-fill text-yellow-400"
+                              ></i>
                             ))}
                           </div>
                           <blockquote className="text-gray-700 leading-relaxed mb-6">
@@ -153,9 +156,15 @@ const SuccessStories = () => {
                               src={t.img}
                             />
                             <div>
-                              <div className="font-semibold text-gray-900">{t.name}</div>
-                              <div className="text-sm text-gray-600">{t.position}</div>
-                              <div className="text-sm text-gray-500">{t.company}</div>
+                              <div className="font-semibold text-gray-900">
+                                {t.name}
+                              </div>
+                              <div className="text-sm text-gray-600">
+                                {t.position}
+                              </div>
+                              <div className="text-sm text-gray-500">
+                                {t.company}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -180,7 +189,9 @@ const SuccessStories = () => {
                   key={idx}
                   onClick={() => setCurrent(idx)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === current ? "bg-blue-600" : "bg-gray-300 hover:bg-gray-400"
+                    idx === current
+                      ? "bg-blue-600"
+                      : "bg-gray-300 hover:bg-gray-400"
                   }`}
                 ></button>
               ))}
@@ -195,26 +206,53 @@ const SuccessStories = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-12">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
-              <div className="text-gray-600">Students Trained</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">200+</div>
-              <div className="text-gray-600">Brands Grown</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">95%</div>
-              <div className="text-gray-600">Success Rate</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">5+</div>
-              <div className="text-gray-600">Years Experience</div>
+        <section className="w-full py-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-6 sm:p-10 md:p-12 shadow-xl">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+                {/* 1️⃣ Students Trained */}
+                <div className="p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-blue-600 mb-2">
+                    10,000+
+                  </div>
+                  <div className="text-gray-700 text-sm sm:text-base font-medium">
+                    Students Trained
+                  </div>
+                </div>
+
+                {/* 2️⃣ Brands Grown */}
+                <div className="p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-green-600 mb-2">
+                    200+
+                  </div>
+                  <div className="text-gray-700 text-sm sm:text-base font-medium">
+                    Brands Grown
+                  </div>
+                </div>
+
+                {/* 3️⃣ Success Rate */}
+                <div className="p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-orange-600 mb-2">
+                    95%
+                  </div>
+                  <div className="text-gray-700 text-sm sm:text-base font-medium">
+                    Success Rate
+                  </div>
+                </div>
+
+                {/* 4️⃣ Years Experience */}
+                <div className="p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-purple-600 mb-2">
+                    5+
+                  </div>
+                  <div className="text-gray-700 text-sm sm:text-base font-medium">
+                    Years Experience
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
   );
